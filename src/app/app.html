@@ -1,0 +1,18 @@
+<header>
+  <img src="/img/header1.png" alt="Imagen del header">
+  <h1>JUEGO DE ADIVINACIÓN</h1>
+  <img src="/img/header1.png" alt="Imagen del header">
+</header>
+<main class="ventana-principal">
+  <app-parametros [juegoIniciado]="juegoIniciado" (configCreada)="onConfigCreada($event)"></app-parametros>
+  <app-juego [config]="config" [numeroSecreto]="numeroSecreto" [juegoIniciado]="juegoIniciado" (juegoTerminado)="onJuegoTerminado()"></app-juego>
+</main>
+
+<footer>
+  <h3>
+    Nadia Judith Argüello Pardo | Creative Commons Attribution 4.0 International (CC BY 4.0)
+  </h3>
+</footer>
+
+
+

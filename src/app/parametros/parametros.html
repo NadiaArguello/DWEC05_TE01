@@ -1,0 +1,32 @@
+<div class="parametros-container">
+  <h2>Parámetros del juego</h2>
+  
+  <form class="parametros" [class.bloqueado]="juegoIniciado">
+    <div class="campo">
+      <label>Nombre:</label>
+      <input class="campoNombre" type="text" [(ngModel)]="nombre" [disabled]="juegoIniciado" name="nombre" />
+      <span class="feedback">{{!nombreValido ? '❌ El campo de nombre no puede quedar vacío' : '✅'}}</span>
+    </div>
+
+    <div class="campo">
+      <label>Apellido(s):</label>
+      <input class="campoNombre" type="text" [(ngModel)]="apellido" [disabled]="juegoIniciado" name="apellido" />
+      <span class="feedback">{{!apellidoValido ? '❌ El campo de apellido no puede quedar vacío' : '✅'}}</span>
+    </div>
+
+    <div class="campo">
+      <label>Rango máximo del número aleatorio:</label>
+      <input class="campoNumero" type="number" [(ngModel)]="rangoMaximo" [disabled]="juegoIniciado" name="rangoMaximo" />
+      <span class="feedback">{{!rangoValido ? '❌ El rango máximo debe ser como mínimo 4' : '✅'}}</span>
+    </div>
+
+    <div class="campo">
+      <label>Número máximo de intentos:</label>
+      <input class="campoNumero" type="number" [(ngModel)]="numIntentos" [disabled]="juegoIniciado" name="numIntentos" />
+      <span class="feedback">{{!intentosValidos ? '❌ El número de intentos debe ser al menos 1' : '✅'}}</span>
+    </div>
+
+    <!-- OJO: type="button" bien escrito -->
+    <button type="button" (click)="iniciarJuego()" [disabled]="!formularioValido || juegoIniciado">Recoger datos</button>
+  </form>
+</div>

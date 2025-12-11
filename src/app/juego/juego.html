@@ -1,0 +1,34 @@
+<div class="juego-container" *ngIf="config">
+    <h2>Juego</h2>
+    <section class="juego">
+      <p class="bienvenida">Ongi Etorri, {{ config.nombre }} {{ config.apellido }}!</p>
+      <p class="marcador">Intentos restantes: {{ intentosRestantes }}</p>
+      <form class="formulario-juego">
+          <div class="campo">
+              <label>Introduce tu número:</label>
+              <input type="number" name="intentoUsuario" [(ngModel)]="intentoUsuario" [disabled]="intentosRestantes === 0 || haGanado"/>
+          </div>
+          <button type="button" (click)="comprobarIntento()" [disabled]="intentoUsuario === null || intentosRestantes === 0 || haGanado">Enviar</button>
+      </form>
+      <article class="resultado" [ngSwitch]="resultado">
+        
+        <div *ngSwitchCase="''"></div>
+        <div class="result-textos" *ngSwitchCase="'ganado'"><h2>¡Has ganado!</h2></div>
+        <div class="result-textos" *ngSwitchCase="'pasado'"><h2>Te pasaste</h2></div>
+        <div class="result-textos" *ngSwitchCase="'caliente'"><h2>Caliente</h2></div>
+        <div class="result-textos" *ngSwitchCase="'templado'"><h2>Templado</h2></div>
+        <div class="result-textos" *ngSwitchCase="'frio'"><h2>Frio</h2></div>
+        <div class="result-textos" class *ngSwitchCase="'sin-intentos'">
+          <h3>¡Has agotado los intentos! El número era el {{ numeroSecreto }}</h3> 
+        </div>
+        <div class="result-imagen" *ngSwitchCase="'ganado'"><img src="img/victoria.png"/></div>
+        <div class="result-imagen" *ngSwitchCase="'pasado'"><img src="img/pasado.png"/></div>
+        <div class="result-imagen" *ngSwitchCase="'caliente'"><img src="img/caliente.png"/></div>
+        <div class="result-imagen" *ngSwitchCase="'templado'"><img src="img/templado.png"/></div>
+        <div class="result-imagen" *ngSwitchCase="'frio'"><img src="img/frio.png"/></div>
+        <div class="result-imagen" *ngSwitchCase="'sin-intentos'"><img src="img/derrota.png"/></div>
+        <div *ngSwitchDefault><h2>Resultado no disponible</h2></div> <!-- Por si ocurre algo inesperado -->
+
+      </article>
+    </section>
+</div>
