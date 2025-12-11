@@ -6,9 +6,9 @@ export default `<!doctype html>
   <base href="/DWEC05_TE01/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>body{margin:0;padding:0}</style><link rel="stylesheet" href="styles-2ATS7KEB.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-2ATS7KEB.css"></noscript></head>
+<style>body{margin:0;padding:0}</style><link rel="stylesheet" href="styles-X4HIMVSW.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-X4HIMVSW.css"></noscript></head>
 <body ngcm="">
   <app-root></app-root>
-<script src="main-AH6HTZ4N.js" type="module"></script></body>
+<script src="main-DJ2ABWPW.js" type="module"></script></body>
 </html>
 `;

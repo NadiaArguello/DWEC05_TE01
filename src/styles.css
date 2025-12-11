@@ -1,3 +1,6 @@
+@import 'app/app.css';
+@import 'app/juego/juego.css';
+@import 'app/parametros/parametros.css';
 body{
     margin: 0px;
     padding: 0px;
